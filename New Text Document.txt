@@ -1,0 +1,35 @@
+titles
+
+111 - h1
+font-size: 54px;
+line-height: 58px;
+
+1
+font-size: 52px;
+line-height: 52px;
+
+1 - h2
+font-size: 48px;
+line-height: 56px;
+
+111 - h3
+font-size: 44px;
+line-height: 58px;
+
+1
+font-size: 36px;
+line-height: 42px;
+
+1 h4
+font-size: 32px;
+line-height: 58px;
+
+1 h5
+font-size: 24px;
+line-height: 30px;
+
+1 h6 
+font-size: 22px;
+line-height: 33px;
+
+
