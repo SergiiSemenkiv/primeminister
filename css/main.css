@@ -188,7 +188,10 @@ h6, .h6 {
 }
 
 @media (min-width: 1200px) {
-  .container-fluid
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .container {
     padding-right: 1.875rem;
     padding-left: 1.875rem;
@@ -232,6 +235,7 @@ h6, .h6 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
+  border: 1px solid red;
 }
 
 .section {
@@ -339,7 +343,7 @@ fieldset {
 .header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 10000;
   background-color: inherit;
   color: var(--pm-color-light);
   padding-top: 1rem;
@@ -539,20 +543,90 @@ fieldset {
 }
 
 .hero__content {
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-  position: relative;
-  justify-content: center;
-  min-height: 600px;
+  margin-top: 24px;
+}
+
+@media (min-width: 992px) {
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    min-height: 600px;
+    padding: 100px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__content {
+    padding: 0;
+    justify-content: center;
+  }
+}
+
+
+.hero__welcome {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+
+}
+
+.hero__welcome-inner {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 16px;
+  padding: 6px 1px;
+  color: var(--pm-dark);
+  background-color: var(--pm-white);
+  border-radius: 4px;
+  text-align: center;
+  transition: all .3s;
+}
+
+@media (min-width: 992px) {
+  .hero__welcome-inner {
+    padding: 20px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__welcome {
+    display: none;
+  }
 }
 
 .hero__title {
   font-weight: 700;
-  font-size: 52px;
-  line-height: 52px;
-  color: var(--pm-white);
-  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--pm-main);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--pm-light);
+}
+
+@media (min-width: 992px) {
+  .hero__title {
+    font-size: 40px;
+    line-height: 52px;
+    color: var(--pm-white);
+    padding-bottom: 0;
+    margin-bottom: 16px;
+    border-bottom: none;
+    max-width: 40%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__title {
+    font-size: 52px;
+    line-height: 52px;
+    margin-bottom: 30px;
+  }
 }
 
 .hero__subtitle {
@@ -563,21 +637,63 @@ fieldset {
 }
 
 .hero__menu-list {
-  margin-bottom: 40px;
+  /*margin-bottom: 40px;*/
+}
+
+@media (min-width: 992px) {
+  .hero__menu-list {
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__menu-list {
+    margin-bottom: 40px;
+  }
 }
 
 .hero__menu-item {
   margin-bottom: 20px;
 }
 
+.hero__menu-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  .hero__menu-item {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+    .hero__menu-item {
+      margin-bottom: 20px;
+    }
+}
+
 .hero__menu-item > a {
   font-weight: 600;
+  font-size: 14px;
   line-height: 30px;
-  color: var(--pm-white);
+  color: var(--pm-dark);
   position: relative;
   padding-left: 16px;
-  border-left: 3px solid var(--pm-main);
+  border-left: 3px solid var(--pm-light);
   transition: .2s ease;
+}
+
+@media (min-width: 992px) {
+  .hero__menu-item > a {
+    color: var(--pm-white);
+    border-left: 3px solid var(--pm-main);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__menu-item > a {
+    font-size: 16px;
+  }
 }
 
 .hero__menu-item > a:hover {
@@ -587,19 +703,48 @@ fieldset {
 
 .hero__btn {
   min-width: 270px;
+  display: none;
 }
 
-.hero__image {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+@media (min-width: 992px) {
+  .hero__btn {
+    display: inline-block;
+  }
 }
+.hero__image-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero__image-wrapper {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero__image-wrapper {
+    position: inherit;
+  }
+
+  .hero__image {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+
 
 .hero__image img {
   max-width: none;
+  width: 100%;
+  min-height: 100%;
 }
 
 /*---footer---*/
